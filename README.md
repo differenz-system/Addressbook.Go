@@ -23,7 +23,7 @@ The app does the following:
 
 
 ## Key Tools & Technologies
-- **Database:** MYSQL
+- **Database:** MYSQL(sequelize)
 - **Authentication:** login
 - **API/Service calls:** fetch API
 - **IDE:**  VSCode
