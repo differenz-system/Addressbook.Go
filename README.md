@@ -17,8 +17,8 @@ The app does the following:
 
 ## Getting Started
 1. [Install Visual Studio code](https://code.visualstudio.com/)
-2. Clone this sample repository
-3. download and Install go  
+2. Clone this sample repository.
+3. download and Install go.  
 4. Enter command "go run filename.go".
 
 
