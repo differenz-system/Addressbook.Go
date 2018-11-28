@@ -9,12 +9,13 @@ import (
 	// . "github.com/connection"
 	"github.com/connection"
 	_ "github.com/connection"
-	"github.com/encryption"
 	_ "github.com/encryption"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 	"github.com/model"
 	_ "github.com/model"
+	"github.com/utility"
+	_ "github.com/utility"
 	// _ "gopkg.in/connection"
 )
 
@@ -45,7 +46,7 @@ func Registration(w http.ResponseWriter, request *http.Request) {
 
 		email := u.Email
 
-		password := encryption.CreateHash(u.Password)
+		password := utility.CreateHash(u.Password)
 		external_id := ""
 
 		insForm, err := db.Prepare("INSERT INTO users (email, password,external_id) VALUES(?,?,?)")
@@ -88,7 +89,7 @@ func Login(w http.ResponseWriter, request *http.Request) {
 		}
 
 		email := u.Email
-		password := encryption.CreateHash(u.Password)
+		password := utility.CreateHash(u.Password)
 
 		rows, err := db.Query("select user_id, email, password from users where email = ? and password = ?", email, password)
 
